@@ -1,0 +1,14 @@
+servo 1:
+maa 6
+virta 4
+signaali 3
+
+
+
+servo 2:
+maa 9
+virta 2
+signaali 5
+
+
+nollakohta 1600

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		window.onload = function(){
+				if (window.DeviceMotionEvent == undefined) {
+		        //No accelerometer is present. Use buttons. 
+		        alert("no accelerometer");
+		    }
+		    else {
+		        alert("accelerometer found");
+		        window.addEventListener("deviceorientation", accelerometerUpdate);
+		    }
+		    document.getElementById("xtilt").value = "Waiting input";
+		    document.getElementById("ytilt").value = "Waiting input";
+		    document.getElementById("ztilt").value = "Waiting input";
+		}
+
+    function accelerometerUpdate(event) {
+		var x = event.beta;  // In degree in the range [-180,180]
+  		var y = event.gamma; // In degree in the range [-90,90]
+		//The following two lines are just to calculate a
+		// tilt. Not really needed. 
+		//xPosition = Math.atan2(aY, aZ);
+		//yPosition = Math.atan2(aX, aZ);
+
+		document.getElementById("xtilt").value = "test";
+}
+	</script>
+</head>
+<body>
+X-tilt: <input type="text" id="xtilt"><br>
+Y-tilt: <input type="text" id="ytilt"><br>
+Z-tilt: <input type="text" id="ztilt">
+</body>
+</html>
